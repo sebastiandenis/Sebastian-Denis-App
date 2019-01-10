@@ -47,3 +47,4 @@ Thumbs.db
 /.firebase
 /src/environments
 firebase-debug.log
+google-services.json
