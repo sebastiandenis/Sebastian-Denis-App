@@ -11,6 +11,9 @@ import { HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
+import { StoreModule } from "@ngrx/store";
+import { reducers, metaReducers } from "./reducers";
+
 
 
 // AoT requires an exported function for factories
@@ -37,7 +40,8 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [],
   bootstrap: [AppComponent],

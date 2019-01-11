@@ -16,6 +16,9 @@ import { firebaseConfig } from "../environments/firebase.config";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { StoreModule } from "@ngrx/store";
+import { reducers, metaReducers } from "./reducers";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -45,7 +48,9 @@ export function createTranslateLoader(http: HttpClient) {
     AppRoutingModule,
     ServiceWorkerModule.register("ngsw-worker.js", { enabled: environment.production }),
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]
