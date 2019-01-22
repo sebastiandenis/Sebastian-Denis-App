@@ -19,6 +19,9 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "./reducers";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { NavigationComponent } from "./navigation/navigation.component";
+import { LayoutModule } from "@angular/cdk/layout";
+import { MaterialModule } from "./material/material.module";
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -30,6 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
+    NavigationComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -50,7 +54,10 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     SharedModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    LayoutModule,
+    MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
