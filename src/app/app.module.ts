@@ -22,6 +22,9 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MaterialModule } from "./material/material.module";
+import { HelloIAmComponent } from './home/containers/hello-i-am/hello-i-am.component';
+import { AboutMeComponent } from './home/containers/about-me/about-me.component';
+import { MyTabsComponent } from './home/containers/my-tabs/my-tabs.component';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -34,6 +37,9 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     HomeComponent,
     NavigationComponent,
+    HelloIAmComponent,
+    AboutMeComponent,
+    MyTabsComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
