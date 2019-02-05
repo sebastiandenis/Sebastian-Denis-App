@@ -1,3 +1,12 @@
-<p>
-  hello-i-am works!
-</p>
+<div fxLayout="row" fxLayoutAlign="space-around stretch" fxLayoutGap="5px"
+class="helloIam">
+  <div fxFlex="25">
+    <app-my-photo></app-my-photo>
+  </div>
+  <div fxFlex style="height: 100%;" >
+    <app-iam-content></app-iam-content>
+  </div>
+  <div fxFlex="10">
+    <app-social-links [links]="socialLinks"></app-social-links>
+  </div>
+</div>

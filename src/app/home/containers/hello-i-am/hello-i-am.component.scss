@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@import 'src/themes/sd-dark-theme.scss';
+
+.helloIam {
+    padding: 7% 3%;
+    background-color: $primary-color;
+    height: 240px;
+}

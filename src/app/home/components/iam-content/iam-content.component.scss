@@ -1,0 +1,27 @@
+@import '~@angular/material/theming';
+@import 'src/themes/sd-dark-theme.scss';
+
+.iam-content {
+  height: 100%;
+  color: $primary-text-color;
+
+  .helloIam {
+    font-weight: 300;
+    font-size: 1.3em;
+  }
+
+  .sd {
+    font-weight: 500;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    margin-top: 7px;
+    margin-bottom: 2px;
+    letter-spacing: 2px;
+  }
+
+  .role {
+    font-weight: 400;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+  }
+}
